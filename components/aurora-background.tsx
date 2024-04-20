@@ -1,6 +1,8 @@
 "use client";
 import { cn } from "@/utils/cn";
 import React, { ReactNode } from "react";
+import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children: ReactNode;
@@ -13,6 +15,14 @@ export const AuroraBackground = ({
   showRadialGradient = true,
   ...props
 }: AuroraBackgroundProps) => {
+  const { theme } = useTheme();
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [theme]);
   return (
     <main>
       <div

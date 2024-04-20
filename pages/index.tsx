@@ -21,18 +21,18 @@ export default function IndexPage() {
 				>
 			<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 transform -translate-y-14">
 				<div className="inline-block max-w-xl text-center justify-center">
-					<h1 className={title({ color: "blue" })}>Hello!&nbsp;</h1>
-					<h1 className={title({ color: theme === 'dark' ? 'white' : 'black' })}>
+					<h1 className={title({color: "blue" })}>Hello!&nbsp;</h1>
+					<h1 className={title({color: theme === 'dark' ? 'foreground' : 'darkblue' })}>
 						I'm David,
 					</h1>
 					<br />
-					<h4 className={title({ color: theme === 'dark' ? 'white' : 'black' })}>
+					<h2 className={title({color: theme === 'dark' ? 'foreground' : 'darkblue' })}>
 						your friendly neighborhood
-					</h4>
+					</h2>
 					<br />
-					<h4 className={title({color: "blue"})}>
+					<h3 className={title({color: "blue"})}>
 						software engineer.
-					</h4>
+					</h3>
 					<h4 className={subtitle()}>
 						Click around to learn more about me!
 					</h4>
