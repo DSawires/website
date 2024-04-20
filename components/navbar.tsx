@@ -76,9 +76,6 @@ export const Navbar = () => {
 			</NavbarContent>
 
 	<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
 		<NavbarMenuToggle className="xl:hidden" />
     </NavbarContent>
 
