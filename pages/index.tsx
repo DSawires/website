@@ -1,11 +1,19 @@
 import { title, subtitle } from "@/components/primitives";
+import { useEffect, useState } from 'react';
 import DefaultLayout from "@/layouts/default";
 import { AuroraBackground } from "@/components/aurora-background";
 import { motion } from "framer-motion";
 import { useTheme } from 'next-themes';
 
 export default function IndexPage() {
-	const { theme } = useTheme();
+	const { resolvedTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	  // After mounting, we have access to the theme
+	  useEffect(() => setMounted(true), []);
+
+	  if (!mounted) return null;
+	
 	return (
 		<DefaultLayout>
 			<AuroraBackground>
@@ -22,11 +30,11 @@ export default function IndexPage() {
 			<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 transform -translate-y-14">
 				<div className="inline-block max-w-xl text-center justify-center">
 					<h1 className={title({color: "blue" })}>Hello!&nbsp;</h1>
-					<h1 className={title({color: theme === 'dark' ? 'foreground' : 'darkblue' })}>
-						I'm David,
+					<h1 className={title({color: resolvedTheme === 'dark' ? 'foreground' : 'darkblue' })}>
+						I'm David, {resolvedTheme}
 					</h1>
 					<br />
-					<h2 className={title({color: theme === 'dark' ? 'foreground' : 'darkblue' })}>
+					<h2 className={title({color: resolvedTheme === 'dark' ? 'foreground' : 'darkblue' })}>
 						your friendly neighborhood
 					</h2>
 					<br />

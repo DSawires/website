@@ -23,8 +23,6 @@ import {
 	LinkedInIcon,
 } from "@/components/icons";
 
-import { Logo } from "@/components/icons";
-
 export const Navbar = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	return (
