@@ -31,7 +31,7 @@ export default function IndexPage() {
 				<div className="inline-block max-w-xl text-center justify-center">
 					<h1 className={title({color: "blue" })}>Hello!&nbsp;</h1>
 					<h1 className={title({color: resolvedTheme === 'dark' ? 'foreground' : 'darkblue' })}>
-						I'm David, {resolvedTheme}
+						I'm David,
 					</h1>
 					<br />
 					<h2 className={title({color: resolvedTheme === 'dark' ? 'foreground' : 'darkblue' })}>
