@@ -13,7 +13,7 @@ import {
 } from "@nextui-org/react";
 
 import { link as linkStyles } from "@nextui-org/theme";
-
+import React, { useState } from 'react';
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
@@ -26,7 +26,7 @@ import {
 import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
-
+	const [currentIndex, setCurrentIndex] = useState(0);
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -88,14 +88,15 @@ export const Navbar = () => {
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								color={
-									index === 2
+									index === currentIndex
 										? "primary"
 										: index === siteConfig.navMenuItems.length - 1
 										? "danger"
 										: "foreground"
 								}
-								href="#"
+								href={item.href}
 								size="lg"
+								onClick={() => setCurrentIndex(index)}
 							>
 								{item.label}
 							</Link>

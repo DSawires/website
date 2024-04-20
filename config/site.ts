@@ -9,16 +9,16 @@ export const siteConfig = {
 			href: "/projects",
 		},
 		{
+			label: "About Me",
+			href: "/about",
+		},
+		{
 			label: "Photography",
 			href: "/photography",
 		},
 		{
 			label: "Resume",
 			href: "/resume",
-		},
-		{
-			label: "About Me",
-			href: "/about",
 		}
 	],
 	navMenuItems: [
