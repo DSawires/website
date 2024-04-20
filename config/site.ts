@@ -44,11 +44,11 @@ export const siteConfig = {
 		},
 		{
 			label: "GitHub",
-			href: "/about",
+			href: "siteConfig.links.github",
 		},
 		{
 			label: "LinkedIn",
-			href: "/about",
+			href: "siteConfig.links.linkedin",
 		},
 		{
 			label: "Contact Me",
