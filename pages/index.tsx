@@ -2,8 +2,10 @@ import { title, subtitle } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { AuroraBackground } from "@/components/aurora-background";
 import { motion } from "framer-motion";
+import { useTheme } from 'next-themes';
 
 export default function IndexPage() {
+	const { theme } = useTheme();
 	return (
 		<DefaultLayout>
 			<AuroraBackground>
@@ -20,11 +22,11 @@ export default function IndexPage() {
 			<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 transform -translate-y-14">
 				<div className="inline-block max-w-xl text-center justify-center">
 					<h1 className={title({ color: "blue" })}>Hello!&nbsp;</h1>
-					<h1 className={title()}>
+					<h1 className={title({ color: theme === 'dark' ? 'white' : 'black' })}>
 						I'm David,
 					</h1>
 					<br />
-					<h4 className={title()}>
+					<h4 className={title({ color: theme === 'dark' ? 'white' : 'black' })}>
 						your friendly neighborhood
 					</h4>
 					<br />
